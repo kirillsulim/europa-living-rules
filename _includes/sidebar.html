@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <nav>
+    <ul>
+      {% for page in site.pages %}
+        {% if page.title and page.nav_exclude != true %}
+          <li>
+            <a href="{{ page.url | relative_url }}" {% if page.url == page.url %}class="active"{% endif %}>
+              {{ page.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
